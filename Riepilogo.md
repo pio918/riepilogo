@@ -293,6 +293,9 @@ Gli elementi principali del JDBC sono:
 Usando statement, le query vengono scritte come stringhe e inviate al database, con il rischio di SQL injection.
 Con PreparedStatement la query viene costruita dinamicamente, grazie all'utilizzo di placeholder (?) che vengono sostituiti in modo sicuro, prevenendo SQL injection.
 
+**Che cos'è una servlet?**
+In Java una servlet è una classe Java che viene eseguita all'interno di un Web Server, ad esempio Tomcat, e servono per gestire le richieste e le risposte http. Estendono la classe HttpServlet e fanno un override dei metodi doGet, doPost, ecc..., che corrispondono ai vari metodi http ai quali al loro interno si possono gestire le operazioni CRUD.
+
 ---
 ## Modulo Spring
 
