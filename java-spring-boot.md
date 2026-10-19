@@ -48,13 +48,13 @@ In Spring le eccezioni possono essere gestite in modo centralizzato mediante una
 
 All'interno di queste classi, si definiscono dei metodi annotati con @ExceptionHandler, che specificano quale tipo di eccezione devono catturare.
 
-Quando l'eccezione verrà lanciata. Spring individua il metodo @ExceptionHandler corrispondente e lo esegue restituendo una risposta personalizzata.
+Quando l'eccezione verrà lanciata, Spring individua il metodo @ExceptionHandler corrispondente e lo esegue restituendo una risposta personalizzata.
 
-Nel caso di un applicazione REST, con @RestControllerAdvice, viene restituita direttamente la risposta in formato JSON.
+Nel caso di un'applicazione REST, con @RestControllerAdvice, viene restituita direttamente la risposta in formato JSON.
 
 
 **Che cos'è JPA?**
-JPA sta per Java Persistance API ed è una specifica di java che definisce uno standard per la gestione e la persistenza dei dati nell'applicazione java, In pratica, JPA, stabilisce come mappare le classi Java alle tabelle di un database relazionale attraverso un insueme di interfacce e annotazioni, come @Entity, @Id.
+JPA sta per Java Persistence API ed è una specifica di java che definisce uno standard per la gestione e la persistenza dei dati nell'applicazione java. In pratica, JPA, stabilisce come mappare le classi Java alle tabelle di un database relazionale attraverso un insieme di interfacce e annotazioni, come @Entity, @Id.
 
 L'implementazione più diffusa di JPA prende il nome di Hibernate, che si occupa di tradurre le operazioni fatte sugli oggetti java in operazioni SQL sul database.
 
@@ -94,14 +94,14 @@ Esistono due politiche di fetching: il Lazy fetching dove i dati relazionati non
 
 
 **Cosa sono i Repository in spring data JPA?**
-In Spting Data JPA, i Repository sono interfacce che gestiscono le operazioni su CRUD sul database in modo automatico, senza bisogno di scrivere query SQL a mano.
+In Spring Data JPA, i Repository sono interfacce che gestiscono le operazioni CRUD sul database in modo automatico, senza bisogno di scrivere query SQL a mano.
 
 
 **Transazioni**
-Una transazione rappresenta un unità logica composta da una o più operazioni sul database che devono essere eseguite tutte o nessuna. Se una di queste operazioni fallisce, Spring fa un rollback, cioè annulla tutte le modifiche effettuate fino a quel momento. Per abilitare una transazione in Spring, bisogna mettere l'annotation @Transactional sopra la firma del metodo o a tutta la classe, solitamente di un service.
+Una transazione rappresenta un'unità logica composta da una o più operazioni sul database che devono essere eseguite tutte o nessuna. Se una di queste operazioni fallisce, Spring fa un rollback, cioè annulla tutte le modifiche effettuate fino a quel momento. Per abilitare una transazione in Spring, bisogna mettere l'annotation @Transactional sopra la firma del metodo o a tutta la classe, solitamente di un service.
 
 
-**Cos'è un API e un API REST?**
+**Cos'è un'API e un'API REST?**
 Si definisce come API il mezzo per la quale due sistemi diversi, scritti anche con linguaggi diversi di comunicare. 
 In particolar modo le API REST sono un modello di API che utilizzano il protocollo HTTP per la comunicazione e utilizzano formati leggeri come JSON e XML per lo scambio di dati.
 
@@ -111,4 +111,4 @@ In particolar modo le API REST sono un modello di API che utilizzano il protocol
 Le API REST sono stateless.
 
 **Cos'è Maven?**
-Maven è uno sterumento per la gestione dei progetti java, ci permette di compilare, pacchettizare in formato jar le applicazioni e gestire le dipendenze delle librerie esterne in modo automatico. Le dipendenze vengono scaricate da un suo repository centrale, o locale se presenti. La configurazione delle dipendenze viene fatta nel pom.xml
+Maven è uno strumento per la gestione dei progetti java, ci permette di compilare, pacchettizzare in formato jar le applicazioni e gestire le dipendenze delle librerie esterne in modo automatico. Le dipendenze vengono scaricate da un suo repository centrale, o locale se presenti. La configurazione delle dipendenze viene fatta nel pom.xml

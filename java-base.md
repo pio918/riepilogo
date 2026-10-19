@@ -1,7 +1,7 @@
 ## Modulo Java Base
 
 **Cos'è un programma ?**
-Per programma, in generale, si intende come la traduzione di un algoritmo in un linguaggio comprensibile alla macchina, cioè il computer, e si intende per algoritmo, un elenco di passo ordinati per arrivare a un risultato.
+Per programma, in generale, si intende come la traduzione di un algoritmo in un linguaggio comprensibile alla macchina, cioè il computer, e si intende per algoritmo, un elenco di passi ordinati per arrivare a un risultato.
 
 
 **Cos'è Java ?**
@@ -36,13 +36,13 @@ La keyword **static** in Java viene utilizzata per dichiarare membri (variabili,
 
 
 **Come le gestisci le eccezioni in java?**
-Le eccezioni in java possono essere gestite usando i blocchi `try-cathc`. 
-Nel blocco del try scriviamo il codice che potrebbe lanciare un eccezione e nel blocco del catch specifichiamo le operazioni da effettuare se l'eccezione avviene.
+Le eccezioni in java possono essere gestite usando i blocchi `try-catch`. 
+Nel blocco del try scriviamo il codice che potrebbe lanciare un'eccezione e nel blocco del catch specifichiamo le operazioni da effettuare se l'eccezione avviene.
 Un blocco finally può essere usato per eseguire delle operazioni indipendentemente dall'esito del blocco `try-catch.`
 
 
 **Differenza tra eccezioni controllate e eccezioni non controllate**
-Le eccezioni controllate sono eccezioni che il compilatore di Java **richiede** di gestire esplicitamente.  Se un blocco può generare un eccezione controllata, bisogna gestirla adeguatamente con un blocco `try-catch`.
+Le eccezioni controllate sono eccezioni che il compilatore di Java **richiede** di gestire esplicitamente.  Se un blocco può generare un'eccezione controllata, bisogna gestirla adeguatamente con un blocco `try-catch`.
 Le eccezioni non controllate, invece, non sono controllate dal compilatore. Derivano da `RuntimeException` o `Error` e sono solitamente causate da **errori di programmazione** che dovrebbero essere corretti.
 Gestire queste eccezioni con `try-catch` è possibile, ma non è considerato una buona pratica
 
@@ -159,16 +159,16 @@ In Java si realizza principalmente con:
 
 
 **Polimorfismo**
-l polimorfismo si riferisce alla capacità di oggetti di classi diverse di rispondere allo stesso messaggio o chiamata di metodo, favorendo il riuso del codice e la creazione di strutture più flessibili.
+Il polimorfismo si riferisce alla capacità di oggetti di classi diverse di rispondere allo stesso messaggio o chiamata di metodo, favorendo il riuso del codice e la creazione di strutture più flessibili.
 Esso può essere realizzato attraverso l’ereditarietà e la sovrascrittura dei metodi. Un metodo definito in una classe base può essere sovrascritto dalle classi derivate, consentendo a ogni classe di implementare il proprio comportamento per quel metodo.
 
 
 **Overloading**
-Si definisce con overloading la pratica di definite più metodi con lo stesso nome all'interno della stessa classe, tuttavia questi metodi devono avere firme diverse, ovvero devono avere diversi tipi o numeri di parametri.
+Si definisce con overloading la pratica di definire più metodi con lo stesso nome all'interno della stessa classe, tuttavia questi metodi devono avere firme diverse, ovvero devono avere diversi tipi o numeri di parametri.
 
 
 Overriding
-Si definisce con overriding la pratica di redifinizione di un metodo di una sottoclasse ereditato da una superclasse.
+Si definisce con overriding la pratica di ridefinizione di un metodo di una sottoclasse ereditato da una superclasse.
 
 
 **Cosa sono le collections?**
@@ -189,10 +189,10 @@ L'array non ha metodi mentre L'ArrayList mette a disposizione diversi metodi.
 
 **Differenza tra un ArrayList e una LinkedList**
 L'ArrayList utilizza un array dinamico per memorizzare i suoi elementi.
-La LinkedList è costituita da nodi, dove ogni nodo è costituito dall'elemento memorizzato è un riferimento che punta all'elemento successivo (e al precedete se si tratta di una double linked list).
+La LinkedList è costituita da nodi, dove ogni nodo è costituito dall'elemento memorizzato e da un riferimento che punta all'elemento successivo (e al precedente se si tratta di una double linked list).
 La differenza sostanziale tra queste due strutture sta nelle performance per determinate operazioni:
 L'ArrayList risulta più veloce per l'accesso casuale degli elementi perché avviene tramite indice, rispetto alla LinkedList che deve scorrere gli elementi per trovare quello desiderato.
-Gli inserimenti e le cancellazioni invece risultano più lenti, se avvengono nel mezzo, in un ArrayList, perché ad ogni elemento inserito/rimosso, gli elmenti dell'ArrayList vengono spostati, mentre nella LinkedList risulta più efficiente inserire/rimuovere elementi perché basta aggiornare i riferimenti dei nodi.
+Gli inserimenti e le cancellazioni invece risultano più lenti, se avvengono nel mezzo, in un ArrayList, perché ad ogni elemento inserito/rimosso, gli elementi dell'ArrayList vengono spostati, mentre nella LinkedList risulta più efficiente inserire/rimuovere elementi perché basta aggiornare i riferimenti dei nodi.
 
 
 
@@ -215,7 +215,7 @@ Collezione che memorizza dati in **coppie chiave - valore**, le **chiavi** sono 
 
 
 Hashmap
-Non garantisce nessun ordine sugli elmenti e accetta chiavi e valori null.
+Non garantisce nessun ordine sugli elementi e accetta chiavi e valori null.
 
 LinkedHashMap
 Mantiene l'ordine di inserimento delle coppie e accetta chiavi e valori null.
@@ -226,7 +226,7 @@ Non accetta chiavi null ma il valore può essere null.
 
 
 **Cosa sono i design pattern?**
-I design pattern sono delle soluzioni riutilizzabili a problemi che sono ricorrenti nello sviluppo software. In pratica sono dei modelli di progttazione che aiutano a scrivere codice.
+I design pattern sono delle soluzioni riutilizzabili a problemi che sono ricorrenti nello sviluppo software. In pratica sono dei modelli di progettazione che aiutano a scrivere codice.
 
 Tipi di pattern sono 
 **Creazionali**: gestiscono **come vengono creati gli oggetti**.
@@ -237,7 +237,7 @@ Tipi di pattern sono
 Il Singleton è un pattern creazionale che garantisce che di una classe si abbia una e una sola istanza in tutto il programma e un punto di accesso globale a quell'istanza. Un esempio è quando si vuole una risorsa condivisa in comune con tutto il programma, come può essere la connessione con il database.
 
 il singleton puo essere definito in due modi, con inizializzazione eager e inizializzazione lazy.
-Con la eager, l'instanza del singleton viene creata non appena viene caricata la classe mentre con l'inizializzazione lazy, l'istanza viene creata solo quando serve, quando viene richamato il suo getter.
+Con la eager, l'istanza del singleton viene creata non appena viene caricata la classe mentre con l'inizializzazione lazy, l'istanza viene creata solo quando serve, quando viene richiamato il suo getter.
 
 
 Factory Method
@@ -245,7 +245,7 @@ Il factory pattern è un pattern creazionale, che ha il compito di delegare la c
 
 
 **MVC**
-Il pattern MVC, detto model-view-controller, è un tipo di pattern che separa la struttura di un applicazione in 3 parti distinte:
+Il pattern MVC, detto model-view-controller, è un tipo di pattern che separa la struttura di un'applicazione in 3 parti distinte:
 - Model: Rappresenta la struttura dei dati e la logica di business dell'applicazione., 
 - View: è quella parte dell'applicazione che rappresenta la presentazione dei dati, mostrando ciò che il model fornisce.
 - Controller: Gestisce le richieste dell'utente e gestisce l'interazione tra la view e il model.
