@@ -72,7 +72,7 @@ Tipi di variabili:
 
 
 **Quali sono i tipi di variabili primitivi in java?**
-I tipi primitivi sono **predefiniti dal linguaggio** e memorizzano direttamente il valore nella memoria stack.
+I tipi primitivi sono **predefiniti dal linguaggio** e memorizzano direttamente il valore (non un riferimento). Se sono variabili locali risiedono nello stack, se sono attributi di un oggetto risiedono nello heap insieme all'oggetto.
 - **`byte`** – Numero intero da -128 a 127, occupa 1 byte.
 - **`short`** – Numero intero da -32.768 a 32.767, occupa 2 byte.
 - **`int`** – Numero intero standard da -2^31 a 2^31-1, occupa 4 byte. 
@@ -80,7 +80,7 @@ I tipi primitivi sono **predefiniti dal linguaggio** e memorizzano direttamente 
 - **`float`** – Numero decimale a precisione singola (~7 cifre), occupa 4 byte. Richiede `f` alla fine del valore.
 - **`double`** – Numero decimale a precisione doppia (~15 cifre), occupa 8 byte. Standard per valori decimali.
 - **`char`** – Singolo carattere Unicode, occupa 2 byte.
-- **`boolean`** – Valore logico `true` o `false`, occupa 1 bit.
+- **`boolean`** – Valore logico `true` o `false`, dimensione non fissata dalla specifica (dipende dalla JVM).
 
 
 **E i tipi reference?**
@@ -197,7 +197,7 @@ Gli inserimenti e le cancellazioni invece risultano più lenti, se avvengono nel
 
 
 **Set**
-Collezione non ordinata di oggetti che non permette duplicati dei suoi elementi, non presenta indici, utilizzando stesso gli elementi come iteratori. Le implementazioni più comuni sono HashSet, LinkedHashSet e TreeSet.
+Collezione non ordinata di oggetti che non permette duplicati dei suoi elementi, non presenta indici: gli elementi si scorrono con un Iterator o con un ciclo for-each. Le implementazioni più comuni sono HashSet, LinkedHashSet e TreeSet.
 
 
 HashSet

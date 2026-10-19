@@ -5,7 +5,7 @@ JDBC sta per Java Database Connectivity, è un'API fornita da Java per consentir
 Gli elementi principali del JDBC sono: 
 - **Connection**, oggetto attivo che permette di aprire una connessione con il database.
 - **PreparedStatement**, oggetto che prepara la query con parametri mediante l'utilizzo di parametri placeholder (?), e la esegue.
-- **ResultSet**, oggetto che viene utilizzato per memorizzare tutte le query di tipo SELECT.
+- **ResultSet**, oggetto che contiene le righe restituite dall'esecuzione di una query di tipo SELECT e permette di scorrerle.
 
 **Differenza tra Statement e PreparedStatement**
 Usando statement, le query vengono scritte come stringhe e inviate al database, con il rischio di SQL injection.
