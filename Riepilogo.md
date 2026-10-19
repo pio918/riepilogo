@@ -277,6 +277,56 @@ L'**integrità referenziale** è una regola dei database relazionali che garanti
     
 - **CROSS JOIN**: produce il prodotto cartesiano tra due tabelle (ogni riga della prima combinata con ogni riga della seconda).
 
+**Che cos'è SQL e quali sono le sue categorie di comandi?**
+SQL (Structured Query Language) è il linguaggio standard per interagire con i database relazionali. I comandi si dividono in:
+- **DDL** (Data Definition Language): definiscono la struttura del database (`CREATE`, `ALTER`, `DROP`, `TRUNCATE`).
+- **DML** (Data Manipulation Language): manipolano i dati (`INSERT`, `UPDATE`, `DELETE`).
+- **DQL** (Data Query Language): interrogano i dati (`SELECT`).
+- **DCL** (Data Control Language): gestiscono i permessi (`GRANT`, `REVOKE`).
+- **TCL** (Transaction Control Language): gestiscono le transazioni (`COMMIT`, `ROLLBACK`, `SAVEPOINT`).
+
+**Differenza tra DELETE, TRUNCATE e DROP**
+- **DELETE**: elimina le righe di una tabella, anche in modo selettivo con `WHERE`. È un comando DML e può essere annullato con un rollback.
+- **TRUNCATE**: elimina tutte le righe di una tabella, mantenendone la struttura. È più veloce di `DELETE`, non ammette `WHERE` e in molti DBMS non può essere annullato.
+- **DROP**: elimina l'intera tabella, sia i dati sia la struttura.
+
+**Differenza tra WHERE e HAVING**
+`WHERE` filtra le righe **prima** del raggruppamento e non può usare funzioni di aggregazione.
+`HAVING` filtra i gruppi **dopo** il `GROUP BY` e può usare funzioni di aggregazione, come `COUNT`, `SUM`, `AVG`, `MIN` e `MAX`.
+
+**Cos'è GROUP BY?**
+`GROUP BY` raggruppa le righe che hanno lo stesso valore in una o più colonne, in modo da applicare a ciascun gruppo le funzioni di aggregazione.
+
+**Differenza tra UNION e UNION ALL**
+`UNION` unisce i risultati di due `SELECT` eliminando i duplicati, mentre `UNION ALL` mantiene anche i duplicati ed è quindi più veloce. Le due query devono avere lo stesso numero di colonne con tipi compatibili.
+
+**Cos'è una vista (VIEW)?**
+Una vista è una tabella virtuale definita da una query `SELECT` salvata nel database. Non memorizza i dati, ma li legge dalle tabelle sottostanti, e serve a semplificare query complesse o a limitare l'accesso ad alcune colonne.
+
+**Differenza tra chiave primaria e chiave unica (UNIQUE)**
+Entrambe garantiscono l'unicità dei valori, ma la chiave primaria non ammette valori `NULL` ed è una sola per tabella, mentre un vincolo `UNIQUE` può ammettere `NULL` (in numero variabile a seconda del DBMS) e può essere definito su più colonne di una stessa tabella.
+
+**Transazioni e proprietà ACID**
+Una transazione è un insieme di operazioni eseguite come un'unica unità logica: o vengono completate tutte (`COMMIT`) o nessuna (`ROLLBACK`). Le proprietà ACID che le caratterizzano sono:
+- **Atomicity** (atomicità): la transazione viene eseguita per intero oppure per nulla.
+- **Consistency** (consistenza): la transazione porta il database da uno stato valido a un altro stato valido.
+- **Isolation** (isolamento): le transazioni concorrenti non interferiscono tra loro.
+- **Durability** (durabilità): una volta confermata, la transazione resta salvata anche in caso di guasti.
+
+**Cos'è la normalizzazione?**
+La normalizzazione è il processo di organizzazione delle tabelle di un database per **ridurre la ridondanza** dei dati ed evitare anomalie di inserimento, modifica e cancellazione. Le principali forme normali sono:
+- **Prima forma normale (1NF)**: ogni campo contiene un solo valore atomico, senza gruppi ripetuti.
+- **Seconda forma normale (2NF)**: è in 1NF e ogni attributo non chiave dipende dall'**intera** chiave primaria (nessuna dipendenza parziale).
+- **Terza forma normale (3NF)**: è in 2NF e ogni attributo non chiave dipende **solo** dalla chiave primaria (nessuna dipendenza transitiva).
+
+**Relazioni tra tabelle**
+- **Uno a molti (1:N)**: una riga della tabella A è collegata a più righe della tabella B, tramite una chiave esterna in B.
+- **Molti a molti (N:M)**: richiede una tabella di join (o tabella associativa) che contiene le chiavi esterne di entrambe le tabelle.
+- **Uno a uno (1:1)**: una riga della tabella A è collegata al massimo a una riga della tabella B.
+
+**Quando conviene non usare un indice?**
+Gli indici velocizzano le letture ma rallentano `INSERT`, `UPDATE` e `DELETE`, perché vanno aggiornati a ogni modifica, e occupano spazio aggiuntivo. Non conviene crearli su tabelle molto piccole o su colonne modificate di frequente e raramente usate nei filtri.
+
 
 ---
 
@@ -411,10 +461,3 @@ Le API REST sono stateless.
 
 **Cos'è Maven?**
 Maven è uno strumento per la gestione dei progetti java, ci permette di compilare, pacchettizzare in formato jar le applicazioni e gestire le dipendenze delle librerie esterne in modo automatico. Le dipendenze vengono scaricate da un suo repository centrale, o locale se presenti. La configurazione delle dipendenze viene fatta nel pom.xml
-
-### **Database / SQL**
-
-- JOIN (INNER, LEFT, RIGHT) e differenze
-- Indicizzazione e chiavi esterne
-- Trigger e Stored Procedure
-- Concetto di normalizzazione
